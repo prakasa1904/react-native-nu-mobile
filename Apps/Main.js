@@ -14,11 +14,14 @@ import styles from './Style/Base'
 // Routes
 import Dashboard from './Router/Dashboard'
 import Profile from './Router/Profile'
+import Kegiatan from './Router/Kegiatan'
+import Pengurus from './Router/Pengurus'
 
 class Main extends Component {
   state = {
     active: 'Dashboard'
   }
+
   setContent = (content) => {
     this.setState({
       active: content,
@@ -26,14 +29,16 @@ class Main extends Component {
   }
 
   contentIs = () => {
+    const label = this.state.active
+
     switch (label) {
-      case 'user':
+      case 'Profile':
         return(<Profile />)
         break
-      case 'kegiatan':
+      case 'Kegiatan':
         return(<Kegiatan />)
         break
-      case 'pengurus':
+      case 'Pengurus':
         return(<Pengurus />)
         break
       default:
@@ -43,7 +48,7 @@ class Main extends Component {
 
   render() { 
     return (
-      <Layout>
+      <Layout setContent={this.setContent} >
         <View style={styles.container}>
           { this.contentIs() }
         </View>
