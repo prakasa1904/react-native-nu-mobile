@@ -1,6 +1,7 @@
 /**
  * @flow
  */
+
 import React, { PropTypes, Component } from 'react'
 import { Text, View } from 'react-native'
 import Menu, { MenuContext, MenuOptions, MenuOption, MenuTrigger } from 'react-native-menu'
@@ -38,7 +39,7 @@ const TopNavigation = () => (
 
 class Simple extends Component {
   static PropTypes = {
-    children: React.PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
   }
 
   render() {

@@ -2,10 +2,8 @@
  * @flow
  */
 
-import React, { Component } from 'react'
+import React, { PropTypes, Component } from 'react'
 import {
-  AppRegistry,
-  StyleSheet,
   Text,
   View
 } from 'react-native'
@@ -13,21 +11,41 @@ import {
 import Layout from './Layout/Simple'
 import styles from './Style/Base'
 
+// Routes
+import Dashboard from './Router/Dashboard'
+import Profile from './Router/Profile'
+
 class Main extends Component {
-  render() {
+  state = {
+    active: 'Dashboard'
+  }
+  setContent = (content) => {
+    this.setState({
+      active: content,
+    })
+  }
+
+  contentIs = () => {
+    switch (label) {
+      case 'user':
+        return(<Profile />)
+        break
+      case 'kegiatan':
+        return(<Kegiatan />)
+        break
+      case 'pengurus':
+        return(<Pengurus />)
+        break
+      default:
+        return(<Dashboard />)
+    }
+  }
+
+  render() { 
     return (
       <Layout>
         <View style={styles.container}>
-          <Text style={styles.welcome}>
-            Dashboard
-          </Text>
-          <Text style={styles.instructions}>
-            Selamat datang di aplikasi NU Mobile By React Native
-          </Text>
-          <Text style={styles.instructions}>
-            Coming Soon Launch at Mei 2017,{'\n'}
-            We're still underconstruction'
-          </Text>
+          { this.contentIs() }
         </View>
       </Layout>
     );
