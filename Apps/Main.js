@@ -19,7 +19,7 @@ import Pengurus from './Router/Pengurus'
 
 class Main extends Component {
   state = {
-    active: 'Dashboard'
+    active: 'Profile'
   }
 
   setContent = (content) => {
