@@ -1,5 +1,5 @@
 const MAIN = {
-  Limit: 1,
+  Limit: 10,
   TopMenu: ['Dashboard', 'Profile', 'Kegiatan', 'Pengurus'],
   API: {
     development: 'http://localhost:3000/api',

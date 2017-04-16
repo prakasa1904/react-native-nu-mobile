@@ -14,10 +14,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  actionsLabel: {
-    fontSize: 20,
-    color: '#007aff',
-  },
   paginationView: {
     height: 44,
     justifyContent: 'center',
@@ -35,8 +31,18 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   row: {
+    flexDirection: 'row',
+    justifyContent: 'center',
     padding: 10,
-    height: 44,
+    backgroundColor: '#F6F6F6',
+  },
+  thumb: {
+    width: 64,
+    height: 64,
+    marginRight: 5,
+  },
+  text: {
+    flex: 1,
   },
   header: {
     backgroundColor: '#50a4ff',

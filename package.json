@@ -7,10 +7,13 @@
     "test": "jest"
   },
   "dependencies": {
+    "@expo/vector-icons": "^4.0.0",
+    "native-base": "^2.1.1",
     "react": "16.0.0-alpha.6",
     "react-native": "0.43.2",
     "react-native-gifted-listview": "0.0.15",
     "react-native-gridview": "^0.1.1",
+    "react-native-loading-spinner-overlay": "^0.4.4",
     "react-native-menu": "^0.20.2",
     "react-native-rest-client": "^0.1.1"
   },

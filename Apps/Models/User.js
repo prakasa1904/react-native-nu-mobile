@@ -15,8 +15,11 @@ export default class ModelUser extends RestClient {
     return this.POST('/auth', { username, password })
   }
 
-  getUsers(page = 0, limit = 10) {
-    return this.GET(`/member/get/?offset=${page}&limit=${limit}`)
+  getUsers(page = 1, limit = 10) {
+    return this.GET(`/member/get/?page=${page}&limit=${limit}`)
       .then(response => response)
+      .catch((error) => {
+        return LIST_DEFAULT
+      })
   }
 }
