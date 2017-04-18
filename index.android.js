@@ -8,4 +8,5 @@ import {
 } from 'react-native'
 import Main from './Apps/Main'
 
+
 AppRegistry.registerComponent('NULite', () => Main)

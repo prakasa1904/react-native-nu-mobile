@@ -16,10 +16,11 @@ import Dashboard from './Router/Dashboard'
 import Profile from './Router/Profile'
 import Kegiatan from './Router/Kegiatan'
 import Pengurus from './Router/Pengurus'
+import Login from './Router/Login'
 
 class Main extends Component {
   state = {
-    active: 'Profile'
+    active: 'Login'
   }
 
   setContent = (content) => {
@@ -32,6 +33,9 @@ class Main extends Component {
     const label = this.state.active
 
     switch (label) {
+      case 'Login':
+          return(<Login />)
+          break
       case 'Profile':
         return(<Profile />)
         break
@@ -46,7 +50,7 @@ class Main extends Component {
     }
   }
 
-  render() { 
+  render() {
     return (
       <Layout setContent={this.setContent} >
         <View style={styles.container}>
