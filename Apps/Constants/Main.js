@@ -4,7 +4,7 @@ const MAIN = {
   API: {
     development: 'http://localhost:3000/api',
     production: 'http://numobile.id/NUMobile'
-  }
+  },
 }
 
 export default MAIN

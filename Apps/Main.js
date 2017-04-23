@@ -2,14 +2,8 @@
  * @flow
  */
 
-import React, { PropTypes, Component } from 'react'
-import {
-  Text,
-  View
-} from 'react-native'
-
+import React, { Component } from 'react'
 import Layout from './Layout/Simple'
-import styles from './Style/Base'
 
 // Routes
 import Dashboard from './Router/Dashboard'
@@ -18,9 +12,19 @@ import Kegiatan from './Router/Kegiatan'
 import Pengurus from './Router/Pengurus'
 import Login from './Router/Login'
 
+const BACKGROUND = require('./img/background.png')
+
 class Main extends Component {
   state = {
-    active: 'Login'
+    title: 'Dashboard',
+    active: 'Profile',
+    loginStatus: '',
+  }
+
+  setTitle = (title) => {
+    this.setState({
+      title: title,
+    })
   }
 
   setContent = (content) => {
@@ -52,10 +56,12 @@ class Main extends Component {
 
   render() {
     return (
-      <Layout setContent={this.setContent} >
-        <View style={styles.container}>
-          { this.contentIs() }
-        </View>
+      <Layout
+        title={this.state.title}
+        setTitle={this.setTitle}
+        setContent={this.setContent}
+      >
+        { this.contentIs() }
       </Layout>
     );
   }

@@ -1,56 +1,65 @@
-/**
- * @flow
- */
-
 import React, { PropTypes, Component } from 'react'
-import { Text, View } from 'react-native'
-import Menu, { MenuContext, MenuOptions, MenuOption, MenuTrigger } from 'react-native-menu'
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native'
+import {
+  Icon,
+  Drawer,
+  Button,
+} from 'native-base'
+import ContentLayout from './Part/Content'
+import LeftMenu from './Part/LeftMenu'
 
-import CONSTANTS from './../Constants/Main'
-import styles from './../Style/TopMenu'
-
-class Simple extends Component {
+export default class Simple extends Component {
   static PropTypes = {
+    title: PropTypes.string.isRequired,
+    setTitle: PropTypes.func.isRequired,
     setContent: PropTypes.func.isRequired,
     children: PropTypes.node.isRequired,
   }
+
+  state={
+    drawerOpen: false,
+    drawerDisabled: false,
+  }
+
+  closeDrawer = () => {
+    this.setState({drawerOpen: false})
+  }
   
-  TopNavigation = () => (
-    <View style={styles.topbar}>
-      <View>
-        <Text style={styles.menuTitle}>NU Mobile</Text>
-      </View>
-      <Menu onSelect={(value) => this.props.setContent(value)}>
-        <MenuTrigger style={styles.menuTrigger}>
-          <Text style={styles.menuTriggerText}>&#8942;</Text>
-        </MenuTrigger>
-        <MenuOptions style={styles.menuOptions}>
-          {
-            CONSTANTS.TopMenu.map((menuName, i) => {
-              return(
-                <MenuOption key={`top-menu-${menuName.toLowerCase()}`} value={menuName}>
-                  <Text>{ menuName }</Text>
-                </MenuOption>
-              )
-            })
-          }
-          <View style={styles.divider}/>
-          <MenuOption value={{ message: 'Hello World!' }}>
-            <Text>Logout</Text>
-          </MenuOption>
-        </MenuOptions>
-      </Menu>
-    </View>
-  )
+  openDrawer = () => {
+    this.setState({drawerOpen: true})
+  }
 
   render() {
     return (
-      <MenuContext style={{ flex: 1 }}>
-        { this.TopNavigation() }
-        { this.props.children }
-        </MenuContext>
-    );
+      <Drawer
+        styles={{main: {shadowColor: '#000000', shadowOpacity: 0.3, shadowRadius: 15}}}
+        content={<LeftMenu closeDrawer={this.closeDrawer} />}
+        open={this.state.drawerOpen}
+        onOpen={() => {
+          this.setState({drawerOpen: true})
+        }}
+        onClose={() => {
+          this.setState({drawerOpen: false})
+        }}
+        disabled={this.state.drawerDisabled}
+        openDrawerOffset={(viewport) => {
+          return 100
+        }}
+        closedDrawerOffset={() => 0}
+        type='static'
+      >
+        <ContentLayout
+          openDrawer={this.openDrawer}
+        >
+          { this.props.children }
+        </ContentLayout>
+      </Drawer>
+    )
   }
 }
-
-export default Simple

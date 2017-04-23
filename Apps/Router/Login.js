@@ -11,14 +11,16 @@ import {
 } from 'react-native';
 
 import styles from './../Style/Login'
+const LOGO = require('../img/numobile.png')
+const BACKGROUND = require('../img/background.png')
 
 export default class Login extends Component {
   render() {
     return (
 		<View style={styles.container}>
-			<Image source={require('../img/background.png')} style={styles.backgroundImage}>
+			<Image source={BACKGROUND} style={styles.backgroundImage}>
 				<View style={styles.content}>
-					<Image source={require('../img/numobile.png')} style={styles.logo}>
+					<Image source={LOGO} style={styles.logo}>
 					</Image>
 					<View style={styles.inputContainer}>
 						<TextInput underlineColorAndroid='transparent' style={styles.input} placeholder='Nama Pengguna'>

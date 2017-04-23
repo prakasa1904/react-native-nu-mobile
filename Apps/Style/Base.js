@@ -1,13 +1,15 @@
-import React from 'react'
-import {
-  StyleSheet,
-} from 'react-native'
-
-const styles = StyleSheet.create({
+const styles = {
   container: {
     flex: 1,
+    zIndex:1,
     backgroundColor: '#F5FCFF',
   },
+  backgroundImage: {
+		flex: 1,
+    zIndex: 0,
+    alignSelf: 'stretch',
+		width: null,
+	},
   welcome: {
     fontSize: 20,
     margin: 10,
@@ -17,6 +19,6 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
-})
+}
 
 export default styles
