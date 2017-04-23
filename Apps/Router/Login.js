@@ -16,7 +16,6 @@ export default class Login extends Component {
   render() {
     return (
 		<View style={styles.container}>
-			<Image source={require('../img/background.png')} style={styles.backgroundImage}>
 				<View style={styles.content}>
 					<Image source={require('../img/numobile.png')} style={styles.logo}>
 					</Image>
@@ -31,7 +30,6 @@ export default class Login extends Component {
 					</TouchableOpacity>
 						<Text>Lupa Password?</Text>
 				</View>
-			</Image>
 		</View>
     );
   }

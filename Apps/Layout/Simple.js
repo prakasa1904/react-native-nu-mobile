@@ -14,7 +14,7 @@ class Simple extends Component {
     setContent: PropTypes.func.isRequired,
     children: PropTypes.node.isRequired,
   }
-  
+
   TopNavigation = () => (
     <View style={styles.topbar}>
       <View>

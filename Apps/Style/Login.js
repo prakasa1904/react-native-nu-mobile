@@ -7,12 +7,6 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 	},
-	backgroundImage: {
-		flex: 1,
-		alignSelf: 'stretch',
-		width: null,
-		justifyContent: 'center',
-	},
 	content:{
 		alignItems: 'center',
 	},
