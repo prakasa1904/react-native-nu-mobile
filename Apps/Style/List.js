@@ -1,56 +1,50 @@
-import React from 'react'
-import {
-  StyleSheet,
-} from 'react-native'
-
-const styles = StyleSheet.create({
-  separator: {
-    height: 1,
-    backgroundColor: '#CCC'
-  },
-  refreshableView: {
-    height: 50,
-    backgroundColor: '#fff',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  paginationView: {
-    height: 44,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#FFF',
-  },
-  defaultView: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
-  },
-  defaultViewTitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginBottom: 15,
-  },
-  row: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    padding: 10,
-    backgroundColor: '#F6F6F6',
-  },
-  thumb: {
-    width: 64,
-    height: 64,
-    marginRight: 5,
-  },
-  text: {
+const styles = {
+  Container: {
     flex: 1,
   },
-  header: {
-    backgroundColor: '#50a4ff',
-    padding: 10,
+  Item: {
+    margin: 0,
+    padding: 0,
+    alignItems: 'flex-start',
+    alignContent: 'flex-start',
   },
-  headerTitle: {
-    color: '#fff',
+  ItemTextBody: {
+    margin: 0,
+    padding: 0,
+    alignItems: 'flex-start',
+    alignContent: 'flex-start',
   },
-})
+  TextTitle: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 3,
+  },
+  TextInfo: {
+    fontSize: 12,
+    fontWeight: 'bold',
+    letterSpacing: 2,
+  },
+  TextDesc: {
+    fontSize: 12,
+    marginTop: 5,
+  },
+  Thumb: {
+    width: 65,
+    height: 85,
+    marginRight: 5,
+  },
+  More: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignContent: 'center',
+    padding: 0,
+  },
+  TextMore: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center',
+    zIndex: 3,
+  },
+}
 
 export default styles

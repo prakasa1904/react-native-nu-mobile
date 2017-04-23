@@ -3,13 +3,13 @@
  */
 
 import React, { PropTypes, Component } from 'react'
+import { View } from 'react-native'
 import { 
-  Container, 
-  Content, 
-  List, 
-  ListItem, 
-  Thumbnail, 
-  Text, 
+  Container,
+  Content,
+  ListItem,
+  Thumbnail,
+  Text,
   Body } from 'native-base'
 import GiftedSpinner from 'react-native-gifted-spinner'
 import GiftedListView from 'react-native-gifted-listview'
@@ -19,7 +19,7 @@ import CONSTANTS from './../Constants/Main'
 import Modeluser from './../Models/User'
 import styles from './../Style/List'
 
-const imgSource = 'https://ecs7.tokopedia.net/img/footer/toped.png'
+const AVATAR = require('../img/warga.png')
 
 class Profile extends Component {
 
@@ -72,8 +72,10 @@ class Profile extends Component {
   
   renderPaginationWaitingView = (paginateCallback) => {
     return (
-      <ListItem onPress={paginateCallback}>
-        <Text>Load more</Text>
+      <ListItem 
+        style={styles.More} 
+        onPress={paginateCallback}>
+        <Text style={styles.TextMore}>Load more</Text>
       </ListItem>
     )
   }
@@ -91,17 +93,25 @@ class Profile extends Component {
             size='small'
           />
         </Content>
-      </Container>
+        </Container>
     )
   }
 
   renderRowView = (rowData) => {
     return (
-      <ListItem onPress={() => this.onPress(rowData)}>
-        <Thumbnail square size={80} source={{uri: imgSource}} />
-        <Body>
-          <Text>{rowData.username}</Text>
-          <Text note>{rowData.email}</Text>
+      <ListItem
+        style={styles.Item}
+        onPress={() => this.onPress(rowData)}>
+        <Thumbnail
+          style={styles.Thumb}
+          square size={80}
+          source={AVATAR} 
+          />
+        <Body style={styles.Item}>
+          <Text style={styles.TextTitle}>{rowData.username}</Text>
+          <Text style={styles.TextInfo} note>Telp. {rowData.phone}</Text>
+          <Text style={styles.TextInfo} note>Email. {rowData.email}</Text>
+          <Text style={styles.TextDesc} note>{rowData.keterangan}</Text>
         </Body>
       </ListItem>
     )
@@ -122,20 +132,20 @@ class Profile extends Component {
     }
 
     return (
-      <Container>
+      <View style={styles.Container}>
           <GiftedListView
-            pagination={true} // enable infinite scrolling using touch to load more
-            firstLoader={true} // display a loader for the first fetching
-            refreshable={true} // enable pull-to-refresh for iOS and touch-to-refresh for Android
-            withSections={false} // enable sections
-            enableEmptySections={true} // enable empty sections
+            pagination={true}
+            firstLoader={false}
+            refreshable={true}
+            withSections={false}
+            enableEmptySections={true}
             onFetch={this.onFetch}
             rowView={this.renderRowView}
             paginationAllLoadedView={this.renderPaginationAllLoadedView}
             paginationWaitingView={this.renderPaginationWaitingView}
             emptyView={this.renderEmptyView}
           />
-      </Container>
+      </View>
     );
   }
 }
