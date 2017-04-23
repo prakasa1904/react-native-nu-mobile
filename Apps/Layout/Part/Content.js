@@ -33,34 +33,6 @@ class ContentLayout extends Component {
     openDrawer: PropTypes.func.isRequired,
   }
   
-  TopNavigation = () => (
-    <View style={TopMenu.topbar}>
-      <View>
-        <Text style={TopMenu.menuTitle}>NU Mobile</Text>
-      </View>
-      <Menu onSelect={(value) => this.props.setContent(value)}>
-        <MenuTrigger style={TopMenu.menuTrigger}>
-          <Text style={TopMenu.menuTriggerText}>&#8942;</Text>
-        </MenuTrigger>
-        <MenuOptions style={TopMenu.menuOptions}>
-          {
-            CONSTANTS.TopMenu.map((menuName, i) => {
-              return(
-                <MenuOption key={`top-menu-${menuName.toLowerCase()}`} value={menuName}>
-                  <Text>{ menuName }</Text>
-                </MenuOption>
-              )
-            })
-          }
-          <View style={TopMenu.divider}/>
-          <MenuOption value={{ message: 'Hello World!' }}>
-            <Text>Logout</Text>
-          </MenuOption>
-        </MenuOptions>
-      </Menu>
-    </View>
-  )
-
   render() {
     return (
       <Container style={Base.container}>

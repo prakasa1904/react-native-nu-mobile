@@ -4,12 +4,12 @@ const styles = {
     zIndex:1,
     backgroundColor: '#F5FCFF',
   },
-  backgroundImage: {
-		flex: 1,
-    zIndex: 0,
-    alignSelf: 'stretch',
-		width: null,
-	},
+  containerSidebar: {
+    flex: 1,
+    borderWidth: 1,
+    borderColor: '#C9C9C9',
+    backgroundColor: '#F5FCFF',
+  },
   welcome: {
     fontSize: 20,
     margin: 10,

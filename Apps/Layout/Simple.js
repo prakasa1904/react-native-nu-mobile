@@ -55,6 +55,7 @@ export default class Simple extends Component {
         type='static'
       >
         <ContentLayout
+          title={this.props.title}
           openDrawer={this.openDrawer}
         >
           { this.props.children }
