@@ -10,6 +10,13 @@ const styles = {
     borderColor: '#C9C9C9',
     backgroundColor: '#F5FCFF',
   },
+  containerDrawer: {
+    main: {
+      shadowColor: '#000000',
+      shadowOpacity: 0.3,
+      shadowRadius: 15,
+    }
+  },
   welcome: {
     fontSize: 20,
     margin: 10,

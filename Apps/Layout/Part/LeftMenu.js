@@ -100,13 +100,3 @@ export default class LeftMenu extends Component {
     )
   }
 }
-
-const styles = {
-  
-  button: {
-    backgroundColor: 'white',
-    borderWidth: 1,
-    borderColor: '#C9C9C9',
-    padding: 5,
-  }
-}

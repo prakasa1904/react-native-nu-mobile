@@ -17,8 +17,8 @@ const BACKGROUND = require('./img/background.png')
 class Main extends Component {
   state = {
     title: 'Dashboard',
-    active: 'Profile',
-    loginStatus: '',
+    active: 'Login',
+    isLogin: false,
   }
 
   setTitle = (title) => {
@@ -57,6 +57,7 @@ class Main extends Component {
   render() {
     return (
       <Layout
+        isLogin={this.state.isLogin}
         title={this.state.title}
         setTitle={this.setTitle}
         setContent={this.setContent}

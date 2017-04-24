@@ -8,11 +8,16 @@ const LIST_DEFAULT = {
 
 export default class ModelUser extends RestClient {
   constructor () {
-    super(CONSTANTS.API.production);
+    super(CONSTANTS.API.production)
   }
   
-  login (username, password) {
-    return this.POST('/auth', { username, password })
+  login(data) {
+    return this.POST('/member/post/', data)
+      .then(response => response)
+      .catch((error) => {
+        console.log(error)
+        return LIST_DEFAULT
+      })
   }
 
   getUsers(page = 1, limit = 10) {

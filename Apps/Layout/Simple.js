@@ -14,17 +14,18 @@ import {
 import ContentLayout from './Part/Content'
 import LeftMenu from './Part/LeftMenu'
 
+import Base from './../Style/Base'
+
 export default class Simple extends Component {
   static PropTypes = {
+    isLogin: PropTypes.bool.isRequired,
     title: PropTypes.string.isRequired,
     setTitle: PropTypes.func.isRequired,
-    setContent: PropTypes.func.isRequired,
     children: PropTypes.node.isRequired,
   }
 
-  state={
+  state = {
     drawerOpen: false,
-    drawerDisabled: false,
   }
 
   closeDrawer = () => {
@@ -38,7 +39,7 @@ export default class Simple extends Component {
   render() {
     return (
       <Drawer
-        styles={{main: {shadowColor: '#000000', shadowOpacity: 0.3, shadowRadius: 15}}}
+        styles={Base.containerDrawer}
         content={<LeftMenu closeDrawer={this.closeDrawer} />}
         open={this.state.drawerOpen}
         onOpen={() => {
@@ -55,6 +56,7 @@ export default class Simple extends Component {
         type='static'
       >
         <ContentLayout
+          isLogin={this.props.isLogin}
           title={this.props.title}
           openDrawer={this.openDrawer}
         >
