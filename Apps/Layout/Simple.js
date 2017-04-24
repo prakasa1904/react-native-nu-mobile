@@ -35,7 +35,7 @@ export default class Simple extends Component {
   openDrawer = () => {
     this.setState({drawerOpen: true})
   }
-
+  
   render() {
     return (
       <Drawer

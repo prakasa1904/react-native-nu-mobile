@@ -60,10 +60,9 @@ export default class Login extends Component {
   render() {
     return (
 		<View style={styles.container}>
-			<Image source={BACKGROUND} style={styles.backgroundImage}>
-				<View style={styles.content}>
-					<Image source={LOGO} style={styles.logo}>
-					</Image>
+			<View style={styles.content}>
+				<Image source={LOGO} style={styles.logo}>
+				</Image>
 					<View style={styles.inputContainer}>
 						<TextInput
 							onChangeText={this.onUsernameChangesHandler}
@@ -85,8 +84,7 @@ export default class Login extends Component {
 						<Text style={styles.buttonText}>LOGIN</Text>
 					</TouchableOpacity>
 						<Text>Lupa Password?</Text>
-				</View>
-			</Image>
+			</View>
 		</View>
     );
   }
