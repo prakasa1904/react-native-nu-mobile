@@ -21,10 +21,10 @@ export default class Login extends Component {
 		username: '',
 		password: '',
 	}
-	
+
 	constructor() {
     super()
-		
+
 		this.api = new Modeluser()
   }
 
@@ -36,7 +36,7 @@ export default class Login extends Component {
 	onUsernameChangesHandler = (username) => {
 		this.setState({username: username})
 	}
-	
+
 	onPasswordChangesHandler = (password) => {
 		this.setState({password: password})
 	}
@@ -50,7 +50,7 @@ export default class Login extends Component {
 		} else {
 			data = Object.assign(data, {action: 'login', username: this.state.username, password: password})
 		}
-		
+
 		this.api.login(data)
 		.then((result) => {
 			console.log(result)
@@ -66,20 +66,20 @@ export default class Login extends Component {
 					<View style={styles.inputContainer}>
 						<TextInput
 							onChangeText={this.onUsernameChangesHandler}
-							underlineColorAndroid='transparent' 
-							style={styles.input} 
+							underlineColorAndroid='transparent'
+							style={styles.input}
 							placeholder='Nama Pengguna'>
 						</TextInput>
 						<TextInput
 							onChangeText={this.onPasswordChangesHandler}
-							secureTextEntry={true} 
-							underlineColorAndroid='transparent' 
-							style={styles.input} 
+							secureTextEntry={true}
+							underlineColorAndroid='transparent'
+							style={styles.input}
 							placeholder='Password'>
 						</TextInput>
 					</View>
-					<TouchableOpacity 
-						onPress={this.onSubmitHandler} 
+					<TouchableOpacity
+						onPress={this.onSubmitHandler}
 						style={styles.buttonContainer}>
 						<Text style={styles.buttonText}>LOGIN</Text>
 					</TouchableOpacity>

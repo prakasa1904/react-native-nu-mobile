@@ -44,6 +44,10 @@ const styles = StyleSheet.create({
 		fontSize: 16,
 		fontWeight: 'bold',
 		textAlign: 'center',
+        height: 40,
+		padding: 10,
+		marginBottom: 10,
+        backgroundColor:'#0e7905',
 	}
 });
 
